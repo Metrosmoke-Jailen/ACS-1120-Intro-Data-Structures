@@ -3,12 +3,11 @@ import random
 
 def rearrange_words(words):
     """Return a new list with the words shuffled."""
-    shuffled = words[:]  # copy to avoid modifying original
+    shuffled = words[:]
     random.shuffle(shuffled)
     return shuffled
 
 if __name__ == '__main__':
-    # Grab all command-line arguments after the script name
     args = sys.argv[1:]
     
     if not args:
