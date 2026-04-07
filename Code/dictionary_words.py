@@ -4,13 +4,13 @@ import random
 DICTIONARY_FILE = "/usr/share/dict/words"
 
 def load_words(file_path):
-    """Load all words from the dictionary file into a list."""
+
     with open(file_path, "r") as f:
         words = [line.strip() for line in f if line.strip()]
     return words
 
 def generate_sentence(words_list, num_words):
-    """Return a string with num_words randomly selected words."""
+
     if num_words > len(words_list):
         raise ValueError("Requested more words than are available in the dictionary.")
     selected = random.sample(words_list, num_words)
