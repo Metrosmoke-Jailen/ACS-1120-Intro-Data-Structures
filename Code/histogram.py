@@ -32,7 +32,6 @@ def most_frequent(hist, n=10):
 
 def least_frequent(hist, n=10):
     """Return the n least common words."""
-    # Sort by frequency ascending
     return sorted(hist.items(), key=lambda x: x[1])[:n]
 
 if __name__ == "__main__":
