@@ -1,6 +1,6 @@
+import sys
 import re
 from collections import Counter
-import sys
 
 def histogram(source_text):
     try:
@@ -14,16 +14,16 @@ def histogram(source_text):
     return hist
 
 def unique_words(hist):
-        return len(hist)
+ return len(hist)
 
 def frequency(word, hist):
-        return hist.get(word.lower(), 0)
+ return hist.get(word.lower(), 0)
 
 def most_frequent(hist, length=10):
-        return hist.most_common(length)
+ return hist.most_common(length)
 
 def least_frequent(hist, length=10):
-        return sorted(hist.items(), key=lambda item: item[1])[:length]
+ return sorted(hist.items(), key=lambda item: item[1])[:length]
 
 if __name__ =="__main__":
         if len(sys.argv) != 2:
