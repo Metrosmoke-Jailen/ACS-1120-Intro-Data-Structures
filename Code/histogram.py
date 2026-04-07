@@ -36,7 +36,7 @@ def least_frequent(hist, n=10):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 word_frequency.py <filename>")
+        print("Usage: python3 histogram.py <filename>")
         sys.exit(1)
 
     filename = sys.argv[1]
