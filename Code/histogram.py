@@ -25,7 +25,7 @@ def most_frequent(hist, length=10):
 def least_frequent(hist, length=10):
  return sorted(hist.items(), key=lambda item: item[1])[:length]
 
-if __name__ =="__main__":
+if __name__ == "__main__":
         if len(sys.argv) != 2:
             print("Usage: python3 histogram.py <filename>")
             sys.exit(1)
@@ -33,9 +33,9 @@ if __name__ =="__main__":
         filename = sys.argv[1]
         hist = histogram(filename)
 
-print(f"Total unique words: {unique_words(hist)}")
-print(f"Most frequent words: {most_frequent(hist)}")
-print(f"Least frequent words: {least_frequent(hist)}")
+        print(f"Total unique words: {unique_words(hist)}")
+        print(f"Most frequent words: {most_frequent(hist)}")
+        print(f"Least frequent words: {least_frequent(hist)}")
 
-word_to_check = "the"
-print(f"Frequency of '{word_to_check}': {frequency(word_to_check, hist)}")
+        word_to_check = "the"
+        print(f"Frequency of '{word_to_check}': {frequency(word_to_check, hist)}")

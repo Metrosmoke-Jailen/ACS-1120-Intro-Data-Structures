@@ -1,5 +1,6 @@
 import sys
 import random
+from collections import defaultdict, Counter
 
 DICTIONARY_FILE = "/usr/share/dict/words"
 
@@ -8,6 +9,24 @@ def load_words(file_path):
     with open(file_path, "r") as f:
         words = [line.strip() for line in f if line.strip()]
     return words
+
+def signature(word):
+    return "".join(sorted(word))
+
+def build_anagram_index(words):
+    index = defaultdict(list)
+
+    for word in words:
+        index[signature(word)].append(word)
+
+    return index
+
+def can_form(word, letter_counts):
+    wc = Counter(word)
+    for ch, count in wc.items():
+        if letter_counts[ch] < count:
+            return False
+    return True
 
 def generate_sentence(words_list, num_words):
 
