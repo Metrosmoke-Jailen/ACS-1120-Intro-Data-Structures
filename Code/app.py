@@ -1,17 +1,18 @@
 """Main script, uses other modules to generate sentences."""
 from flask import Flask
-
+import dictionary_words
 
 app = Flask(__name__)
 
-# TODO: Initialize your histogram, hash table, or markov chain here.
-# Any code placed here will run only once, when the server starts.
+words_file = "/usr/share/dict/words"
+word_list = dictionary_words.load_words(words_file)
 
 
 @app.route("/")
 def home():
     """Route that returns a web page containing the generated text."""
-    return "<p>TODO: Return a word here!</p>"
+    sentence = dictionary_words.generate_sentence(word_list, 7)
+    return f"<h1>{sentence}</h1>"
 
 
 if __name__ == "__main__":
