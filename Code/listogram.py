@@ -61,12 +61,6 @@ class Listogram(list):
             if dart <= cumulative:
                 return word
 
-    def entries(self):
-        entries = []
-        for word, count in self:
-            entries.append([word, count])
-        return entries
-
 def print_histogram(word_list):
     print()
     print('Histogram:')

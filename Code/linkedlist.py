@@ -132,13 +132,15 @@ class LinkedList:
         raise ValueError(f'Item not found: {item}')
     
     def replace(self, old_item, new_item):
-        node = self.head
+        current = self.head
 
-        while node:
-            if node.data == old_item:
-                node.data = new_item
+        while current:
+            if current.data == old_item:
+                current.data = new_item
                 return
-            node = node.next
+            current = current.next
+
+        raise ValueError(f'Item not found: {old_item}')
 
 def test_linked_list():
     ll = LinkedList()
