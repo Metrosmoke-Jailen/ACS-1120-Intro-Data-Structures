@@ -56,7 +56,7 @@ class LinkedList:
         count = 0
         node = self.head
 
-        while node is not None:
+        while node:
             count += 1
             node = node.next
         
@@ -69,7 +69,7 @@ class LinkedList:
 
         if self.is_empty():
             self.head = new_node
-            self.tail + new_node
+            self.tail = new_node
         else:
             self.tail.next = new_node
             self.tail = new_node
@@ -92,7 +92,7 @@ class LinkedList:
         TODO: Worst case running time: O(???) Why and under what conditions?"""
         node = self.head
 
-        while node is not None:
+        while node:
             if matcher(node.data):
                 return node.data
             node = node.next
@@ -106,7 +106,7 @@ class LinkedList:
         node = self.head
         prev = None
 
-        while node is not None:
+        while node:
             if node.data == item:
 
                 if prev is None:
@@ -125,7 +125,15 @@ class LinkedList:
             node = node.next
         
         raise ValueError(f'Item not found: {item}')
+    
+    def replace(self, old_item, new_item):
+        node = self.head
 
+        while node:
+            if node.data == old_item:
+                node.data = new_item
+                return
+            node = node.next
 
 def test_linked_list():
     ll = LinkedList()
