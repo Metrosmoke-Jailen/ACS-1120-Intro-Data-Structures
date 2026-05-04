@@ -93,8 +93,13 @@ class LinkedList:
         node = self.head
 
         while node:
+         if callable(matcher):
             if matcher(node.data):
                 return node.data
+         else:
+            if node.data == matcher:
+                return node.data
+            
             node = node.next
         
         return None
